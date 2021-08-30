@@ -1,16 +1,14 @@
+// This function will work for search input
 const searchFood = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
-    console.log();
     if (searchText.replace(/\s/g, '') == '') {
-        searchField.value = '';
         showError('word');
         return;
     }
     else {
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
         // clear search
-        searchField.value = '';
         // Load data
         fetch(url)
             .then(res => res.json())
@@ -25,13 +23,20 @@ const searchFood = () => {
             });
     }
 }
+// This function will work to clear  search field and to make the error message more understandable
+const removeValue = () => {
+    document.getElementById('search-field').value = '';
+    const removeError = document.getElementById('remove-error');
+    removeError.innerHTML = '';
+}
 
 //This function will work to show error
 const showError = errorWord => {
     const searchResult = document.getElementById('search-result');
-    document.getElementById('meal-details').style.display = 'none';
     searchResult.innerHTML = '';
+    document.getElementById('meal-details').style.display = 'none';
     const error = document.createElement('div');
+    error.setAttribute('id', 'remove-error');
     error.classList.add('text-center', 'w-100');
     error.innerHTML = `
          <div style="color:red;"><h2>Sorry! No ${errorWord} found</h2></div>
@@ -44,7 +49,6 @@ const showError = errorWord => {
 const displaySearchResult = meals => {
     const searchResult = document.getElementById('search-result');
     document.getElementById('meal-details').style.display = 'none';
-    searchResult.innerHTML = '';
     meals.forEach(meal => {
         const div = document.createElement('div');
         div.classList.add('col');
