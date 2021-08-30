@@ -24,7 +24,7 @@ const searchFood = () => {
     }
 }
 // This function will work to clear  search field and to make the error message more understandable
-const removeValue = () => {
+const removeValueAndError = () => {
     document.getElementById('search-field').value = '';
     const removeError = document.getElementById('remove-error');
     removeError.innerHTML = '';
