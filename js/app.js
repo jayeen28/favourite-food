@@ -2,7 +2,8 @@
 const searchFood = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
-    if (searchText.replace(/\s/g, '') == '') {
+    console.log(searchText);
+    if (searchText.replace(/\s/g, '') == '' || searchField.value[0] == '%') {
         showError('word');
         return;
     }
@@ -49,6 +50,7 @@ const showError = errorWord => {
 const displaySearchResult = meals => {
     const searchResult = document.getElementById('search-result');
     document.getElementById('meal-details').style.display = 'none';
+    searchResult.innerHTML = '';
     meals.forEach(meal => {
         const div = document.createElement('div');
         div.classList.add('col');
