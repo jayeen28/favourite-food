@@ -29,6 +29,7 @@ const searchFood = () => {
 //This function will work to show error
 const showError = errorWord => {
     const searchResult = document.getElementById('search-result');
+    document.getElementById('meal-details').style.display = 'none';
     searchResult.innerHTML = '';
     const error = document.createElement('div');
     error.classList.add('text-center', 'w-100');
@@ -42,6 +43,7 @@ const showError = errorWord => {
 //This function will work to show search result
 const displaySearchResult = meals => {
     const searchResult = document.getElementById('search-result');
+    document.getElementById('meal-details').style.display = 'none';
     searchResult.innerHTML = '';
     meals.forEach(meal => {
         const div = document.createElement('div');
