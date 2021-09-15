@@ -8,31 +8,36 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <title>Khabar Dibi Naki</title>
+    <title>Jayeen's Kitchen</title>
+    <style>
+        .card-container {
+            padding: 10%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    </style>
 </head>
 
 <body class="bg-gray">
     <!-- Search Input -->
-    <h2 class="text-center text-success">Search Your Favourite Food.</h2>
-    <div class="input-group mb-3 w-50 mx-auto">
+    <h2 class="text-center text-success">Jayeen's recipe store</h2>
+    <h6 class="text-center text-danger">To see your desired recipe click on any of the search results.</h6>
+    <div class="input-group mb-3 w-75 mx-auto">
         <input id="search-field" type="text" class="form-control" placeholder="Search the food you eat"
             aria-label="Recipient's username" aria-describedby="button-addon2" onfocus="removeValueAndError()">
         <button class="btn btn-outline-secondary" type="button" id="button-search"
             onclick="searchFood()">Search</button>
     </div>
     <!-- Meal Details -->
-    <div id="meal-details" class="mx-auto w-50" style="display: none;">
-        <div class="card mb-3 w-90">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img id="meal-image" class="img-fluid rounded-start">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 id="meal-head" class="card-title"></h5>
-                        <p id="meal-detail" class="card-text"></p>
-                        <a id="youtube-btn" class="btn btn-danger rounded p-2">Watch On YouTube</a>
-                    </div>
+    <div id="meal-details" style="display: none;">
+        <div class="card-container">
+            <div class="card border border-danger">
+                <img id="meal-image" class="img-fluid rounded-start">
+                <div class="card-body">
+                    <h5 id="meal-head" class="card-title"></h5>
+                    <p id="meal-detail" class="card-text"></p>
+                    <a id="youtube-btn" class="btn btn-danger rounded p-2">Watch On YouTube</a>
                 </div>
             </div>
         </div>
