@@ -75,6 +75,7 @@ const displaySearchResult = meals => {
 }
 //This function will work to show more details of clicked meal
 const loadMealsData = mealId => {
+    document.documentElement.scrollTop = 0;
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
     fetch(url)
         .then(res => res.json())

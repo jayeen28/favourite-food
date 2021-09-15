@@ -20,6 +20,22 @@
         .header-warning {
             font-size: 14px;
         }
+
+        .search-box {
+            width: 75%;
+        }
+
+        @media only screen and (min-width:600px) {
+            .card-container {
+                width: 40%;
+                padding: 4% 5%;
+            }
+
+            .search-box {
+                width: 50%;
+
+            }
+        }
     </style>
 </head>
 
@@ -28,7 +44,7 @@
     <h2 class="text-center text-success">Jayeen's recipe store</h2>
     <h6 class="text-center text-danger header-warning">To see your desired recipe click on any of the search results.
     </h6>
-    <div class="input-group mb-3 w-75 mx-auto">
+    <div class="input-group mb-3 mx-auto search-box">
         <input id="search-field" type="text" class="form-control" placeholder="Search the food you eat"
             aria-label="Recipient's username" aria-describedby="button-addon2" onfocus="removeValueAndError()">
         <button class="btn btn-outline-secondary" type="button" id="button-search"
