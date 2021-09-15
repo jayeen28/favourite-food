@@ -1,9 +1,16 @@
+//enter to search system
+const searchField = document.getElementById('search-field');
+const searchBtn = document.getElementById('button-search');
+searchField.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        searchBtn.click();
+    }
+});
 // This function will work for search input
 const searchFood = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
-    console.log(searchText);
-    if (searchText.replace(/\s/g, '') == '' || searchField.value[0] == '%') {
+    if (searchText.replace(/\s/g, '') == '') {
         showError('word');
         return;
     }
