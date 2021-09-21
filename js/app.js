@@ -62,7 +62,7 @@ const displaySearchResult = meals => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div onclick="loadMealsData(${meal.idMeal})" class="card">
+        <div onclick="loadMealsData(${meal.idMeal})" class="card border border-warning">
         <img src="${meal.strMealThumb}" class="card-img-top" alt="">
             <div class="card-body">
                 <h5 class="card-title">${meal.strMeal}</h5>
