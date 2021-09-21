@@ -72,6 +72,7 @@ const displaySearchResult = meals => {
         `;
         searchResult.appendChild(div);
     })
+    document.getElementById('footer').classList.remove("d-none");
 }
 //This function will work to show more details of clicked meal
 const loadMealsData = mealId => {
